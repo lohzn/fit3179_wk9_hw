@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1000,
+  "height": 650,
+  "title": "Earthquakes in the Region of Japan between 2016 and 2018",
+  "projection": { "type": "identity", "reflectY": true },
+  "layer": [
+    {
+      "data": {
+        "url": "\\wk9_homework\\js\\ne_2.json",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_10m_admin_0_countries_jpn"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "mediumseagreen",
+        "stroke": "black",
+        "strokeWidth": 0.3
+      }
+    },
+    {
+      "data": {
+        "url": "\\wk9_homework\\data\\jpn_eq_16_18.csv"
+      },
+      "mark": { "type": "circle", "tooltip": { "content": "data" } },
+      "encoding": {
+        "longitude": { "field": "longitude", "type": "quantitative" },
+        "latitude": { "field": "latitude", "type": "quantitative" },
+        "size": {
+          "field": "mag",
+          "type": "quantitative",
+          "title": "Magnitude (Richter scale)",
+          "scale": { "domain": [4, 8] }
+        },
+        "color": {
+          "field": "depth",
+          "type": "quantitative",
+          "title": "Depth in km",
+          "scale": { "scheme": "darkblue", "reverse": true }
+        },
+        "tooltip": [
+          { "field": "mag", "type": "quantitative", "title": "Magnitude" },
+          {
+            "field": "longitude",
+            "type": "quantitative",
+            "title": "Longitude"
+          },
+          { "field": "latitude", "type": "quantitative", "title": "Latitude" },
+          { "field": "depth", "type": "quantitative", "title": "Depth" },
+          { "field": "place", "type": "nominal", "title": "Place" },
+          {
+            "field": "time",
+            "type": "temporal",
+            "format": "%Y-%m-%d %H:%M:%S",
+            "title": "Time"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "\\wk9_homework\\js\\ne_2.json",
+        "format": { "type": "topojson", "feature": "ne_110m_graticules_5" }
+      },
+      "mark": { "type": "geoshape", "stroke": "black", "opacity": 0.3 }
+    }
+  ]
+}
