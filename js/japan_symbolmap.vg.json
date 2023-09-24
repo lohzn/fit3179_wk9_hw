@@ -7,7 +7,7 @@
   "layer": [
     {
       "data": {
-        "url": "\\wk9_homework\\js\\ne_2.json",
+        "url": "https://raw.githubusercontent.com/lohzn/fit3179_wk9_hw/main/js/ne_2.json",
         "format": {
           "type": "topojson",
           "feature": "ne_10m_admin_0_countries_jpn"
@@ -22,7 +22,7 @@
     },
     {
       "data": {
-        "url": "\\wk9_homework\\data\\jpn_eq_16_18.csv"
+        "url": "https://raw.githubusercontent.com/lohzn/fit3179_wk9_hw/main/data/jpn_eq_16_18.csv"
       },
       "mark": { "type": "circle", "tooltip": { "content": "data" } },
       "encoding": {
@@ -61,7 +61,7 @@
     },
     {
       "data": {
-        "url": "\\wk9_homework\\js\\ne_2.json",
+        "url": "https://raw.githubusercontent.com/lohzn/fit3179_wk9_hw/main/js/ne_2.json",
         "format": { "type": "topojson", "feature": "ne_110m_graticules_5" }
       },
       "mark": { "type": "geoshape", "stroke": "black", "opacity": 0.3 }
